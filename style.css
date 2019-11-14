@@ -6,28 +6,73 @@
   font-size: 5em;
   text-align: center;
   height: 100vh;
-}
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+    "top1 top1 top1"
+    "mid1 mid2 mid3"
+    "mid1 mid4 mid3"
+    "bot1 bot1 bot1";
+  }
 
 #header {
   background-color: #f3ca40;
+  grid-area: top1;
 }
 
 #nav {
   background-color: #4b4e6d;
+  grid-area: mid1;
 }
 
 #article-1 {
   background-color: #6a8d92;
+  grid-area: mid2;
 }
 
 #article-2 {
   background-color: yellow;
+  grid-area: mid4;
 }
 
 #ads {
   background-color: #f2a541;
+  grid-area: mid3;
 }
 
 #footer {
   background-color: #f08a4b;
+  grid-area: bot1;
+}
+
+
+@media (max-width: 1000px) {
+  #app{
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+    "top1 top1"
+    "mid1 mid1"
+    "mid2 mid3"
+    "mid4 mid3"
+    "bot1 bot1"
+    ;
+  }
+
+}
+
+@media (max-width: 500px) {
+  #app{
+    grid-template-rows: repeat(6, 1fr);
+    /* grid-template-columns: repeat(); */
+    grid-template-areas: 
+    "top1"
+    "mid1"
+    "mid2"
+    "mid3"
+    "mid4"
+    "bot1"
+    ;
+  }
 }
